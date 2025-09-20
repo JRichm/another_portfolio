@@ -1,42 +1,48 @@
 export default function Hero() {
     return (
-        <div className="flex flex-col w-full items-center justify-center h-screen gap-6">
-            <div>
-                <div className="w-64 aspect-square bg-red-500 rounded-full">
-
-                </div>
+        <div className="flex flex-col w-full items-center justify-center min-h-screen pt-16 px-4 gap-8">
+            <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white text-4xl font-bold">JR</span>
             </div>
-            <div>
-                <h1 className="text-5xl font-bold">Hi I'm James Richmond</h1>
+            <div className="text-center">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+                    Hi, I'm James Richmond
+                </h1>
+                <h2 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium">
+                    Full-Stack Developer & Problem Solver
+                </h2>
             </div>
-            <div>
-                <h5 className="text-2xl">Plugging things in w a spit of redbull</h5>
+            <div className="max-w-3xl text-center">
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    I specialize in creating software solutions that streamline workflows and solve complex problems. 
+                    With expertise in Python, TypeScript, React, and cloud technologies like AWS and GCS, 
+                    I build applications that make a difference.
+                </p>
             </div>
-            <div className="flex flex-col items-center">
-                <h6 className="w-1/2 text-center">In a buttshell, I write code that solves problems that shouldnt exist in the first place. I specialize in creating software solutions for people and customers who get paid to complain, utilizing languages including but not limited to python, java/typescript, c# and technoligies like pandas, panel, pygame, react, django, AWS, GCS and pygame</h6> 
+            <div className="flex flex-col sm:flex-row gap-4">
+                <button className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium shadow-lg hover:shadow-xl transform hover:scale-105">
+                    Download Resume
+                </button>
+                <button className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 font-medium">
+                    View My Work
+                </button>
             </div>
-            <div>
-                <div className="flex flex-row gap-4">
-                    <button className="hover:cursor-pointer px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium border-none">download resume</button>
-                    <button className="hover:cursor-pointer px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-gray-500 hover:text-white transition-colors duration-200 font-medium">view my work</button>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8 w-full max-w-4xl">
+                <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">3+</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">Years Experience</p>
                 </div>
-            </div>
-            <div className="flex flex-row gap-24">
-                <div className="flex flex-col items-center">
-                    <p className="text-amber-600 text-5xl font-bold">5</p>
-                    <p>weekly redbulls</p>
+                <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">15+</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">Projects Completed</p>
                 </div>
-                <div className="flex flex-col items-center">
-                    <p className="text-amber-600 text-5xl font-bold">6/7</p>
-                    <p>jorks completed</p>
+                <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">8+</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">Technologies</p>
                 </div>
-                <div className="flex flex-col items-center">
-                    <p className="text-amber-600 text-5xl font-bold">40+</p>
-                    <p>hours wasted</p>
-                </div>
-                <div className="flex flex-col items-center">
-                    <p className="text-amber-600 text-5xl font-bold">100%</p>
-                    <p>clitoral satisfaction</p>
+                <div className="text-center">
+                    <p className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">100%</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">Client Satisfaction</p>
                 </div>
             </div>
         </div>
