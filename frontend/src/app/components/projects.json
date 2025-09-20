@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Newscript",
+        "description": "A modern news aggregation platform with personalized feeds and real-time updates.",
+        "skills": ["React", "TypeScript", "Node.js", "MongoDB"],
+        "demo_video": "https://example.com/newscript-demo",
+        "repo": "https://github.com/user/newscript",
+        "link": "https://newscript-demo.com",
+        "image": "",
+        "featured": true
+    },
+    {
+        "name": "TrafficSimulator",
+        "description": "An interactive traffic simulation system for urban planning and optimization.",
+        "skills": ["Python", "Pygame", "Machine Learning", "Data Visualization"],
+        "demo_video": "",
+        "repo": "https://github.com/user/traffic-simulator",
+        "link": "",
+        "image": "",
+        "featured": true
+    },
+    {
+        "name": "MidiFret",
+        "description": "A MIDI controller interface for guitar fretboard visualization and learning.",
+        "skills": ["JavaScript", "Web Audio API", "MIDI"],
+        "demo_video": "",
+        "repo": "https://github.com/user/midifret",
+        "link": "https://midifret-app.com",
+        "image": "",
+        "featured": false
+    },
+    {
+        "name": "GardenGame",
+        "description": "A relaxing garden simulation game with plant growth mechanics.",
+        "skills": ["Unity", "C#", "Game Design"],
+        "demo_video": "",
+        "repo": "",
+        "link": "",
+        "image": "",
+        "featured": false
+    },
+    {
+        "name": "pypexel",
+        "description": "A Python library for pixel art generation and manipulation.",
+        "skills": ["Python", "PIL", "CLI Tools"],
+        "demo_video": "",
+        "repo": "https://github.com/user/pypexel",
+        "link": "",
+        "image": "",
+        "featured": false
+    },
+    {
+        "name": "birdsim",
+        "description": "A bird flocking simulation using boids algorithm for realistic movement patterns.",
+        "skills": ["JavaScript", "Canvas API", "Algorithm Design"],
+        "demo_video": "https://example.com/birdsim-demo",
+        "repo": "https://github.com/user/birdsim",
+        "link": "https://birdsim-demo.com",
+        "image": "",
+        "featured": false
+    }
+]

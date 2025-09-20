@@ -24,3 +24,35 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+h1 {
+  font-size: var(--text-5xl)
+}
+
+h2 {
+  font-size: var(--text-4xl)
+}
+
+h3 {
+  font-size: var(--text-3xl)
+}
+
+h4 {
+  font-size: var(--text-2xl)
+}
+
+h5 {
+  font-size: var(--text-xl)
+}
+
+h6 {
+  font-size: var(--text-lg)
+}
+
+input, textarea {
+  border: var(--color-gray-500);
+  border-width: 1px;
+  border-style: var(--tw-border-style);
+  border-radius: 5px;
+  padding: 5px;
+}
