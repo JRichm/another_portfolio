@@ -20,11 +20,13 @@ export default function Projects() {
                 </div>
                 <div className="mb-20">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                        {featuredProjects.map((project, index) => (
-                            <div key={index} className="transform hover:scale-105 transition-transform duration-300">
-                                <Project {...project} />
-                            </div>
-                        ))}
+                        {
+                            featuredProjects.map((project, index) => (
+                                <div key={index} className="transform hover:scale-105 transition-transform duration-300">
+                                    <Project {...project} />
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
                     {
@@ -49,19 +51,6 @@ export default function Projects() {
                             </div>
                         )
                     }
-                <div className="text-center mt-20">
-                    <p className="text-gray-400 mb-6">
-                        Interested in working together or want to see more of my work?
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
-                            View My GitHub
-                        </button>
-                        <button className="px-6 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-gray-500 hover:text-white transition-colors duration-200 font-medium">
-                            Get In Touch
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     );
