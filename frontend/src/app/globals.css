@@ -54,5 +54,5 @@ input, textarea {
   border-width: 1px;
   border-style: var(--tw-border-style);
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 8px;
 }
