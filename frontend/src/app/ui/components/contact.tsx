@@ -18,20 +18,49 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
+    const clickupUrl = `https://api.clickup.com/api/v2/list/${process.env.CONTACT_LIST_ID}/task`
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsSubmitting(true)
+        setSubmitStatus('idle')
         
+        const messageData = {
+            name: `Portfolio Contact: ${formData.name}`,
+            description: `
+                **Name:** ${formData.name}
+                **Email:** ${formData.email}
+                **Message:**
+                ${formData.message}
+            `,
+            status: 'to do',
+            tags: ['portfolio-contact']
+        }
+
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            console.log('Form submitted:', formData)
+            const response = await fetch(clickupUrl, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `${process.env.CLICKUP_API_TOKEN}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(messageData)
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log('Task created:', result);
             
-            setSubmitStatus('success')
-            setFormData({ name: '', email: '', message: '' })
+            setSubmitStatus('success');
+            setFormData({ name: '', email: '', message: '' });
         } catch (error) {
-            setSubmitStatus('error')
+            console.error('Error creating task:', error);
+            setSubmitStatus('error');
         } finally {
-            setIsSubmitting(false)
+            setIsSubmitting(false);
         }
     }
 
@@ -114,7 +143,7 @@ export default function Contact() {
                                 </label>
                                 <textarea id="message" name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="w-full border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-colors resize-vertical" placeholder="Tell me about your project or how I can help..." />
                             </div>
-                            <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 font-medium flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed" >
+                            <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:cursor-pointer hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 font-medium flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed" >
                                 {
                                     isSubmitting ? (
                                         <>
