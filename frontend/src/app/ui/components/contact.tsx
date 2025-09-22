@@ -18,46 +18,24 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-    const clickupUrl = `https://api.clickup.com/api/v2/list/${process.env.CONTACT_LIST_ID}/task`
-
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setIsSubmitting(true)
         setSubmitStatus('idle')
-        
-        const messageData = {
-            name: `Portfolio Contact: ${formData.name}`,
-            description: `
-                **Name:** ${formData.name}
-                **Email:** ${formData.email}
-                **Message:**
-                ${formData.message}
-            `,
-            status: 'to do',
-            tags: ['portfolio-contact']
-        }
 
         try {
-            const response = await fetch(clickupUrl, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `${process.env.CLICKUP_API_TOKEN}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(messageData)
+            const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
             });
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-            const result = await response.json();
-            console.log('Task created:', result);
-            
             setSubmitStatus('success');
             setFormData({ name: '', email: '', message: '' });
         } catch (error) {
-            console.error('Error creating task:', error);
+            console.error('Error submitting contact form:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
